@@ -23,7 +23,7 @@ header {
 footer {
     background: #78A2CC;
     color: #fff;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }
