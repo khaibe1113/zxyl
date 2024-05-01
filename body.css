@@ -15,9 +15,16 @@ header, section, footer {
 header {
     background: #78A2CC;
     color: #fff;
-    border-bottom-left-radius: 50%; /* More flexible radius */
+    border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     overflow: hidden;
+    width: 100%; /* Ensure header is full width */
+}
+
+.header-logo {
+    width: 50%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 250px; /* Maximum height to maintain design */
 }
 
 footer {
