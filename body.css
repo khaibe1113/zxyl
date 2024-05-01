@@ -15,10 +15,9 @@ header, section, footer {
 header {
     background: #78A2CC;
     color: #fff;
-    padding: 0px 0px; /* Increased top and bottom padding for better visual */
-    border-bottom-left-radius: 500px; /* Adds a curve to the bottom-left corner */
-    border-bottom-right-radius: 500px; /* Adds a curve to the bottom-right corner */
-    overflow: hidden; /* Prevents content from spilling outside the curve */
+    border-bottom-left-radius: 50%; /* More flexible radius */
+    border-bottom-right-radius: 50%;
+    overflow: hidden;
 }
 
 footer {
@@ -34,15 +33,15 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    max-width: 600px; /* You can adjust this value as needed */
-    margin: 0 auto; /* Center the container */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .social-media-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(50% - 20px); /* 50% so two buttons fit into one row */
+    width: 100%; /* Flexibility for small screens */
     height: 50px;
     margin: 10px;
     background-color: #006fb9;
@@ -55,6 +54,12 @@ footer {
     height: 30px;
     width: auto;
     margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    .social-media-links a {
+        width: calc(50% - 20px); /* Only apply this on larger screens */
+    }
 }
 
 .social-media-links .username {
