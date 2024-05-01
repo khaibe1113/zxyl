@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #78A2CC;
+    background-color: rgba(244, 244, 244, 0.769);
+}
+
+header, section, footer {
+    text-align: center;
+    padding: 10px;
+}
+
+header {
+    background: #78A2CC;
+    color: #fff;
+    padding: 0px 0px; /* Increased top and bottom padding for better visual */
+    border-bottom-left-radius: 500px; /* Adds a curve to the bottom-left corner */
+    border-bottom-right-radius: 500px; /* Adds a curve to the bottom-right corner */
+    overflow: hidden; /* Prevents content from spilling outside the curve */
+}
+
+footer {
+    background: #78A2CC;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-media-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px; /* You can adjust this value as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+.social-media-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(50% - 20px); /* 50% so two buttons fit into one row */
+    height: 50px;
+    margin: 10px;
+    background-color: #006fb9;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.social-media-links svg {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.social-media-links .username {
+    font-weight: bold;
+}
