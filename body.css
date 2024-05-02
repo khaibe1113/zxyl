@@ -1,6 +1,6 @@
 body {
     font-family: 'Amatic SC', cursive;
-    line-height: 1.6;
+    line-height: 3;
     margin: 0;
     padding: 0;
     color: #033668;
@@ -98,4 +98,33 @@ footer {
     font-weight: bold;
     text-align: center;
     margin-top: 5px;
+}
+.image-carousel-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carousel-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #78A2CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-image {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: none; /* Hide images initially */
+}
+
+.carousel-image.visible {
+    display: block; /* Show the active image */
 }
