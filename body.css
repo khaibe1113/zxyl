@@ -122,9 +122,9 @@ footer {
 .carousel-image {
     min-width: 100%;
     transition: transform 0.5s ease;
-    display: none; /* Hide images initially */
+    display: none; 
 }
 
 .carousel-image.visible {
-    display: block; /* Show the active image */
+    display: block; 
 }
