@@ -50,6 +50,16 @@
                 </svg>
                 <span class="username">Zxyl #yuqi1</span>
             </a>
+            <div class="image-carousel-container">
+                <button class="carousel-btn prev-btn">Prev</button>
+                <div class="image-carousel">
+                    <img src="meh.jpg" alt="Image 1" class="carousel-image visible">
+                    <img src="mehh.jpg" alt="Image 2" class="carousel-image">
+                    <img src="mehhh.jpg" alt="Image 3" class="carousel-image">
+                </div>
+                <button class="carousel-btn next-btn">Next</button>
+            </div>
+            
         </div>
         <h2>About Me</h2>
         <p>Hi, I'm Zill, and I really love anime and playing games. My favorite game is Valorant, league of legends and genshin , where I can spend most of my time if I don't have anything to do!</p>
@@ -59,7 +69,7 @@
         <p>Thank you for visiting! Remember, life is an adventure—so let's make every moment count. Farewell for now!!</p>
     </section>
     <section>
-       <section>
+        <section>
             <h2>Connect with me</h2>
             <a href="mailto:your-email@example.com" class="email-link">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="email-icon">
@@ -71,5 +81,30 @@
     <footer>
         <p>Copyright Â© 2024</p>
     </footer>
+    <script>
+        const images = document.querySelectorAll('.carousel-image');
+        let currentImage = 0;
+    
+        function showCurrentImage() {
+            images.forEach((img, index) => {
+                img.style.display = 'none'; 
+                img.classList.remove('visible');
+            });
+            images[currentImage].style.display = 'block'; 
+            images[currentImage].classList.add('visible');
+        }
+    
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            currentImage = currentImage > 0 ? currentImage - 1 : images.length - 1;
+            showCurrentImage();
+        });
+    
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            currentImage = currentImage < images.length - 1 ? currentImage + 1 : 0;
+            showCurrentImage();
+        });
+    
+        showCurrentImage(); 
+    </script>    
 </body>
 </html>
