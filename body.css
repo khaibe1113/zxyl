@@ -120,11 +120,12 @@ footer {
 }
 
 .carousel-image {
-    min-width: 100%;
+    min-width: 100%; /* Adjust this to change the width */
+    max-height: 300px; /* Set a max-height to control how tall the images can be */
     transition: transform 0.5s ease;
-    display: none; 
+    display: none; /* Hide images initially */
 }
 
 .carousel-image.visible {
-    display: block; 
+    display: block; /* Show the active image */
 }
