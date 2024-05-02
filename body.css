@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amatic SC', cursive;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #78A2CC;
-    background-color: rgba(244, 244, 244, 0.769);
+    background-color: rgba(255, 224, 224, 0.769)
 }
 
 header, section, footer {
@@ -18,13 +18,13 @@ header {
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     overflow: hidden;
-    width: 100%; /* Ensure header is full width */
+    width: 100%; 
 }
 
 .header-logo {
-    width: 50%; /* Responsive width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 250px; /* Maximum height to maintain design */
+    width: 50%; 
+    height: auto; 
+    max-height: 250px;
 }
 
 footer {
@@ -48,7 +48,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Flexibility for small screens */
+    width: 100%; 
     height: 50px;
     margin: 10px;
     background-color: #006fb9;
@@ -65,10 +65,37 @@ footer {
 
 @media (min-width: 768px) {
     .social-media-links a {
-        width: calc(50% - 20px); /* Only apply this on larger screens */
+        width: calc(50% - 20px); 
     }
 }
 
 .social-media-links .username {
     font-weight: bold;
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;  
+    height: 60px; 
+    background-color: #006fb9;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.email-icon {
+    height: 30px; 
+    width: 30px; 
+    margin: 0 auto; 
+}
+
+.email-text {
+    font-size: 12px; 
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
 }
