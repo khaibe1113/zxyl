@@ -8,7 +8,7 @@ body {
 header, section, footer {
     text-align: center;
     padding: 20px;
-    margin-bottom: 10px; /* Reduced margin for spacing */
+    margin-bottom: 10px;
 }
 
 header {
@@ -72,13 +72,12 @@ footer {
     font-weight: bold;
 }
 
-.email-link {
+.messenger-link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;  
     height: 60px; 
-    background-color: #006fb9;
     color: white;
     text-decoration: none;
     border-radius: 50%;
@@ -86,13 +85,14 @@ footer {
     padding: 0;
 }
 
-.email-icon {
-    height: 30px; 
-    width: 30px; 
+.messenger-icon {
+    height: 50opx; 
+    width: 50opx; 
     margin: 0 auto; 
 }
 
 .image-carousel-container {
+    position: relative;
     text-align: center;
     margin-top: 20px;
 }
@@ -105,7 +105,13 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
 }
+
+.next-btn {
+    top: 40px; /* Adjust this value as needed to lower just the 'Next' button */
+}
+
 
 .image-carousel {
     display: flex;
@@ -136,4 +142,23 @@ footer {
     border: 5px solid rgb(109, 116, 219); 
     box-sizing: border-box; 
     box-shadow: 0 0 10px #333;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -160%); 
+    color: #051650; 
+    font-size: 30px; 
+    pointer-events: none; 
+    z-index: 10;
+}
+
+.image-carousel-container .carousel-btn .carousel-text {
+    color: #051650; 
+}
+
+section.about-me {
+    margin-top: 50px;
 }
