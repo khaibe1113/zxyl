@@ -37,7 +37,7 @@ footer {
     background: #78A2CC;
     color: #fff;
     margin-top: auto;
-    width: 1000%;
+    width: auto;
     text-align: center;
     padding: 10px 0;
 }
@@ -117,7 +117,7 @@ footer {
 }
 
 .next-btn {
-    top: 40px; /* Adjust this value as needed to lower just the 'Next' button */
+    top: 40px; 
 }
 
 
@@ -127,11 +127,16 @@ footer {
 }
 
 .carousel-image {
-    min-width: 100%; 
-    max-height: 300px;
-    transition: transform 0.5s ease;
-    display: none;
+    width: auto; 
+    max-width: 10%; 
+    height: auto; 
+    object-fit: contain; 
+    display: block; 
+    margin: auto; 
+    border: 5px solid rgb(109, 116, 219); 
+    box-sizing: content-box; 
 }
+
 
 .carousel-image.visible {
     display: block;
@@ -140,27 +145,6 @@ footer {
 .image-carousel-container h2 {
     color: #033668;
     margin-bottom: 10px;
-}
-
-.carousel-image {
-    min-width: 100%; 
-    max-height: 300px;
-    transition: transform 0.5s ease;
-    display: none;
-    border: 5px solid rgb(109, 116, 219); 
-    box-sizing: border-box; 
-    box-shadow: 0 0 10px #333;
-}
-
-.carousel-text {
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -160%); 
-    color: #051650; 
-    font-size: 30px; 
-    pointer-events: none; 
-    z-index: 10;
 }
 
 .image-carousel-container .carousel-btn .carousel-text {
