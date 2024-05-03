@@ -56,23 +56,32 @@
                 </svg>
                 <span class="username">Zxyl #yuqi1</span>
             </a>
-            <div class="image-carousel-container">
-                <h2>Photo Album</h2> 
-                <button class="carousel-btn prev-btn">Prev</button>
-                <div class="image-carousel">
-                    <img src="meh.jpg" alt="Image 1" class="carousel-image visible">
-                    <img src="mehh.jpg" alt="Image 2" class="carousel-image">
-                    <img src="mehhh.jpg" alt="Image 3" class="carousel-image">
-                    <img src="mehhhh.jpg" alt="Image 3" class="carousel-image">
-                    <img src="mehhhhh.jpg" alt="Image 3" class="carousel-image">
-                    <span class="image-caption">Selfies</span>
-                </div>
-                <button class="carousel-btn next-btn">
-                    Next
-                    <span class="carousel-text">Selfies</span>
-                </button>                
-            </div>
         </div>
+        <section class="image-carousel-container">
+            <h2>Make up Selfies</h2>
+            <button class="carousel-btn prev-btn">Prev</button>
+            <div class="image-carousel">
+                <img src="meh.jpg" alt="Image 1" class="carousel-image visible">
+                <img src="mehh.jpg" alt="Image 2" class="carousel-image">
+                <img src="mehhh.jpg" alt="Image 3" class="carousel-image">
+                <img src="mehhhh.jpg" alt="Image 4" class="carousel-image">
+                <img src="mehhhhh.jpg" alt="Image 5" class="carousel-image">
+            </div>
+            <button class="carousel-btn next-btn">Next</button>
+        </section>
+        
+        <section class="image-carousel-container">
+            <h2>Cosplay Photos</h2>
+            <button class="carousel-btn prev-btn">Prev</button>
+            <div class="image-carousel">
+                <img src="cosplay.jpg" alt="Cosplay Image 1" class="carousel-image visible">
+                <img src="cosplayy.jpg" alt="Cosplay Image 2" class="carousel-image">
+                <img src="cosplayyy.jpg" alt="Cosplay Image 3" class="carousel-image">
+                <img src="cosplayyyy.jpg" alt="Cosplay Image 4" class="carousel-image">
+                <img src="cosplayyyyy.jpg" alt="Cosplay Image 5" class="carousel-image">
+            </div>
+            <button class="carousel-btn next-btn">Next</button>
+        </section>        
         <section class="about-me">
         <h2>About Me</h2>
         <p>Hi, I'm Zill, and I really love anime and playing games. My favorite game is Valorant, league of legends and genshin , where I can spend most of my time if I don't have anything to do!</p>
@@ -95,29 +104,33 @@
         <p></p>
     </footer>
     <script>
-        const images = document.querySelectorAll('.carousel-image');
-        let currentImage = 0;
+        function setupCarousel(carouselContainer) {
+            const images = carouselContainer.querySelectorAll('.carousel-image');
+            let currentImage = 0;
     
-        function showCurrentImage() {
-            images.forEach((img, index) => {
-                img.style.display = 'none'; 
-                img.classList.remove('visible');
+            function showCurrentImage() {
+                images.forEach((img, index) => {
+                    img.style.display = 'none';
+                    img.classList.remove('visible');
+                });
+                images[currentImage].style.display = 'block';
+                images[currentImage].classList.add('visible');
+            }
+    
+            carouselContainer.querySelector('.prev-btn').addEventListener('click', () => {
+                currentImage = currentImage > 0 ? currentImage - 1 : images.length - 1;
+                showCurrentImage();
             });
-            images[currentImage].style.display = 'block'; 
-            images[currentImage].classList.add('visible');
+    
+            carouselContainer.querySelector('.next-btn').addEventListener('click', () => {
+                currentImage = currentImage < images.length - 1 ? currentImage + 1 : 0;
+                showCurrentImage();
+            });
+    
+            showCurrentImage(); // Initialize the first image
         }
     
-        document.querySelector('.prev-btn').addEventListener('click', () => {
-            currentImage = currentImage > 0 ? currentImage - 1 : images.length - 1;
-            showCurrentImage();
-        });
-    
-        document.querySelector('.next-btn').addEventListener('click', () => {
-            currentImage = currentImage < images.length - 1 ? currentImage + 1 : 0;
-            showCurrentImage();
-        });
-    
-        showCurrentImage(); 
-    </script>    
+        document.querySelectorAll('.image-carousel-container').forEach(setupCarousel);
+    </script>        
 </body>
 </html>
