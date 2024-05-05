@@ -14,6 +14,7 @@ body {
 
 main {
     flex: 1;
+    width: 90%;
     max-width: 900px;
     margin: auto;    
     text-align: center;
@@ -25,6 +26,7 @@ header, footer {
     color: #fff;
     text-align: center;
     padding: 20px;
+    width: 100%;
 }
 
 header {
@@ -47,7 +49,7 @@ section.about-me {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px 20px 0px 20px;
+    padding: 20px;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -56,9 +58,9 @@ section.about-me {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(50% - 20px);
+    width: calc(50% - 10px);
     height: 50px;
-    margin: 10px;
+    margin: 5px;
     background-color: #006fb9;
     color: white;
     text-decoration: none;
@@ -73,7 +75,7 @@ section.about-me {
 
 @media (min-width: 768px) {
     .social-media-links a {
-        width: calc(50% - 20px); 
+        width: calc(33% - 20px);
     }
 }
 
@@ -113,11 +115,12 @@ section.about-me {
 .image-carousel {
     display: flex;
     overflow: hidden;
+    justify-content: center;
 }
 
 .carousel-image {
     width: auto;
-    max-width: 30%;
+    max-width: 70%;
     height: auto;
     object-fit: contain;
     display: block;
@@ -126,12 +129,30 @@ section.about-me {
     box-sizing: content-box;
 }
 
-.carousel-image.visible {
-    display: block;
-}
-
 .image-carousel-container h2 {
     color: #033668;
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    header, footer {
+        padding: 15px;
+        height: 80px;
+    }
+
+    .carousel-image {
+        max-width: 90%;
+    }
+
+    .carousel-btn {
+        padding: 8px 15px;
+    }
+
+    .social-media-links a, .steam-link {
+        width: calc(100% - 20px);
+    }
+
+    main {
+        width: 95%;
+    }
+}
