@@ -83,35 +83,49 @@
         </div>
     <section>
 
-    <section>
-        <h2>Photo Album</h2>
-        <section class="image-carousel-container">
+        <section class="slideshow-container">
             <h2>Selfies</h2>
-            <button class="carousel-btn prev-btn">Prev</button>
-            <div class="image-carousel">
-                <img src="selfies.png" alt="Image 1" class="carousel-image visible">
-                <img src="meh.jpg" alt="Image 1" class="carousel-image">
-                <img src="mehh.jpg" alt="Image 2" class="carousel-image">
-                <img src="mehhh.jpg" alt="Image 3" class="carousel-image">
-                <img src="mehhhh.jpg" alt="Image 4" class="carousel-image">
-                <img src="mehhhhh.jpg" alt="Image 5" class="carousel-image">
+            <div class="mySlides selfies fade">
+                <img src="selfies.png" style="width:100%" alt="Selfie 1">
             </div>
-            <button class="carousel-btn next-btn">Next</button>
+            <div class="mySlides selfies fade">
+                <img src="meh.jpg" style="width:100%" alt="Selfie 2">
+            </div>
+            <div class="mySlides selfies fade">
+                <img src="mehh.jpg" style="width:100%" alt="Selfie 3">
+            </div>
+            <div class="mySlides selfies fade">
+                <img src="mehhh.jpg" style="width:100%" alt="Selfie 4">
+            </div>
+            <div class="mySlides selfies fade">
+                <img src="mehhhh.jpg" style="width:100%" alt="Selfie 5">
+            </div>
+            <div class="mySlides selfies fade">
+                <img src="mehhhhh.jpg" style="width:100%" alt="Selfie 6">
+            </div>
         </section>
-        
-        <section class="image-carousel-container">
-            <button class="carousel-btn prev-btn">Prev</button>
-            <div class="image-carousel">
-                <img src="cosplay1.png" alt="Cosplay Image 1" class="carousel-image visible">
-                <img src="cosplay.jpg" alt="Cosplay Image 2" class="carousel-image">
-                <img src="cosplayy.jpg" alt="Cosplay Image 2" class="carousel-image">
-                <img src="cosplayyy.jpg" alt="Cosplay Image 3" class="carousel-image">
-                <img src="cosplayyyy.jpg" alt="Cosplay Image 4" class="carousel-image">
-                <img src="cosplayyyyy.jpg" alt="Cosplay Image 5" class="carousel-image">
+
+        <section class="slideshow-container">
+            <h2>Cosplay</h2>
+            <div class="mySlides cosplay fade">
+                <img src="cosplay1.png" style="width:100%" alt="Cosplay Image 1">
             </div>
-            <button class="carousel-btn next-btn">Next</button>
-            </section> 
-        </section> 
+            <div class="mySlides cosplay fade">
+                <img src="cosplay.jpg" style="width:100%" alt="Cosplay Image 2">
+            </div>
+            <div class="mySlides cosplay fade">
+                <img src="cosplayy.jpg" style="width:100%" alt="Cosplay Image 3">
+            </div>
+            <div class="mySlides cosplay fade">
+                <img src="cosplayyy.jpg" style="width:100%" alt="Cosplay Image 4">
+            </div>
+            <div class="mySlides cosplay fade">
+                <img src="cosplayyyy.jpg" style="width:100%" alt="Cosplay Image 5">
+            </div>
+            <div class="mySlides cosplay fade">
+                <img src="cosplayyyyy.jpg" style="width:100%" alt="Cosplay Image 6">
+            </div>
+        </section>
 
         <section class="about-me">
         <h2>About Me</h2>
@@ -139,38 +153,28 @@
         </section> 
     </main>
     <footer>
-        
+        <p>©2024</p>
     </footer>
     
     <script>
-        function setupCarousel(carouselContainer) {
-            const images = carouselContainer.querySelectorAll('.carousel-image');
-            let currentImage = 0;
-    
-            function showCurrentImage() {
-                images.forEach((img, index) => {
-                    img.style.display = 'none';
-                    img.classList.remove('visible');
-                });
-                images[currentImage].style.display = 'block';
-                images[currentImage].classList.add('visible');
+        function showSlides(className, interval = 2000) {
+            let index = 0;
+            function displaySlides() {
+                let slides = document.getElementsByClassName(className);
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                index++;
+                if (index > slides.length) { index = 1; }
+                slides[index - 1].style.display = "block";
+                setTimeout(displaySlides, interval);
             }
-    
-            carouselContainer.querySelector('.prev-btn').addEventListener('click', () => {
-                currentImage = currentImage > 0 ? currentImage - 1 : images.length - 1;
-                showCurrentImage();
-            });
-    
-            carouselContainer.querySelector('.next-btn').addEventListener('click', () => {
-                currentImage = currentImage < images.length - 1 ? currentImage + 1 : 0;
-                showCurrentImage();
-            });
-    
-            showCurrentImage();
+            displaySlides();
         }
-    
-        document.querySelectorAll('.image-carousel-container').forEach(setupCarousel);
-    </script> 
+
+        showSlides("selfies", 3000); 
+        showSlides("cosplay", 3000); 
+    </script>
 
 </body>
 </html>
