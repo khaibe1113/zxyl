@@ -9,7 +9,10 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1;
     color: #033668;
-    background-color: rgba(255, 224, 224, 0.769);
+    background-image: url("freenie.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 main {
@@ -19,6 +22,10 @@ main {
     margin: auto;    
     text-align: center;
     padding: 20px;
+    background-color: rgba(255, 224, 224, 0.769);
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s;
 }
 
 header, footer {
@@ -38,7 +45,7 @@ header {
 footer {
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
-    height: 100px;
+    height: 20px;
 }
 
 section.about-me {
@@ -154,5 +161,40 @@ section.about-me {
 
     main {
         width: 95%;
+    }
+}
+
+
+/* Common styles for both slideshows */
+.slideshow-container {
+    position: relative;
+    width: 50%;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
