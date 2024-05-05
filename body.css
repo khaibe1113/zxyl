@@ -1,45 +1,46 @@
-body {
-    font-family: 'Roboto', sans-serif; 
-    line-height: 1; 
-    color: #033668;
-    background-color: rgba(255, 224, 224, 0.769);
+html, body {
     height: 100%;
-    margin: 0; 
-}
-
-body {
+    margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-header, section, footer {
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    color: #033668;
+    background-color: rgba(255, 224, 224, 0.769);
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: auto;    
     text-align: center;
     padding: 20px;
-    margin-bottom: 10px;
+}
+
+header, footer {
+    background: #78A2CC;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
 }
 
 header {
-    background: #78A2CC;
-    color: #fff;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    overflow: hidden;
-    width: 100%; 
-}
-
-.header-logo {
-    width: 50%; 
-    height: auto; 
-    max-height: 250px;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    height: 100px;
 }
 
 footer {
-    background: #78A2CC;
-    color: #fff;
-    margin-top: auto;
-    width: auto;
-    text-align: center;
-    padding: 10px 0;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    height: 100px;
+}
+
+section.about-me {
+    margin-top: 50px;
 }
 
 .social-media-links {
@@ -51,11 +52,11 @@ footer {
     margin: 0 auto;
 }
 
-.social-media-links a {
+.social-media-links a, .steam-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
+    width: calc(50% - 20px);
     height: 50px;
     margin: 10px;
     background-color: #006fb9;
@@ -84,19 +85,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;  
-    height: 60px; 
+    width: 60px;
+    height: 60px;
     color: white;
     text-decoration: none;
     border-radius: 50%;
     margin: 20px auto;
     padding: 0;
-}
-
-.messenger-icon {
-    height: 50opx; 
-    width: 50opx; 
-    margin: 0 auto; 
 }
 
 .image-carousel-container {
@@ -113,13 +108,7 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: relative;
 }
-
-.next-btn {
-    top: 40px; 
-}
-
 
 .image-carousel {
     display: flex;
@@ -127,16 +116,15 @@ footer {
 }
 
 .carousel-image {
-    width: auto; 
-    max-width: 30%; 
-    height: auto; 
-    object-fit: contain; 
-    display: block; 
-    margin: auto; 
-    border: 5px solid rgb(109, 116, 219); 
-    box-sizing: content-box; 
+    width: auto;
+    max-width: 30%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border: 5px solid rgb(82, 69, 0);
+    box-sizing: content-box;
 }
-
 
 .carousel-image.visible {
     display: block;
@@ -147,10 +135,3 @@ footer {
     margin-bottom: 10px;
 }
 
-.image-carousel-container .carousel-btn .carousel-text {
-    color: #051650; 
-}
-
-section.about-me {
-    margin-top: 50px;
-}
